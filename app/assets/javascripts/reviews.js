@@ -33,5 +33,6 @@ Reviews = (function(){
     } 
     else {
       Reviews.showNoReviews();
-    });
+    };
  });
+});
