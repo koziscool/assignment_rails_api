@@ -13,21 +13,23 @@ seed_multiplier = 1
 
 movies = []
 (8*seed_multiplier).times do |user|
-  movies << Movie.create( [ {
+  movies << Movie.create(  {
     title: Faker::Name.title, 
     release_date: Faker::Date.between(10.years.ago, Date.today)
-    }])
+    })
 end
 
+movies = Movie.all
 
 reviews = []
 (8*seed_multiplier).times do |review|
-  reviews << Review.create([{
+  reviews << Review.create({
     reviewer_name: Faker::Name.name, 
     title: Faker::Date.between(10.years.ago, Date.today),
+    movie_id: 4,
     review_text: Faker::Lorem.paragraph, 
     review_date: Faker::Date.between(5.years.ago, Date.today) 
-    }])
+    })
 end
 
 

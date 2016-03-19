@@ -8,8 +8,8 @@
 
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-
-      <%= render :review_form_partial %>
+      <% r = Review.new %>
+      <%= render partial: "review_form_partial", :locals => { :review => r } %>
       <br>
       <h3>All Reviews</h3>
       <table class="table">
@@ -22,7 +22,7 @@
           <th>Delete</th>
 
         <% @reviews.each do |review| %>
-          <%= render :review, :locals => { :review => review } %>
+          <%= render review, :locals => { :review => review } %>
         <% end %>
         </thead>
         <tbody id="review-list">
